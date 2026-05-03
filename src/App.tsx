@@ -54,13 +54,9 @@ export default function App() {
         <div className="max-w-7xl mx-auto px-6 md:px-12 flex justify-between items-center text-sm font-medium tracking-tight">
           <div className="flex items-center gap-2">
             <img 
-              src="https://postimg.cc/7CZdPqz9" 
+              src="https://i.postimg.cc/pL43XG0G/logo-vidracaria.png" 
               alt="Logo Carvalho & Souza" 
-              className="w-10 h-10 object-contain"
-              onError={(e) => {
-                // Fallback to text logo if image fails to load
-                (e.target as HTMLImageElement).style.display = 'none';
-              }}
+              className={`w-10 h-10 object-contain transition-all ${scrolled ? 'brightness-0' : 'brightness-0 invert'}`}
             />
             <span className={`text-xl font-serif font-bold ${scrolled ? 'text-black' : 'text-black md:text-white'}`}>
               Vidraçaria Carvalho & Souza
@@ -586,13 +582,13 @@ export default function App() {
           </div>
 
           <div className="flex flex-col md:flex-row justify-between items-center pt-12 border-t border-white/10 gap-6">
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-3">
               <img 
-                src="https://postimg.cc/7CZdPqz9" 
+                src="https://i.postimg.cc/pL43XG0G/logo-vidracaria.png" 
                 alt="Logo Carvalho & Souza" 
-                className="w-8 h-8 object-contain filter invert"
+                className="w-10 h-10 object-contain brightness-0 invert"
               />
-              <span className="text-sm font-serif font-bold">Vidraçaria Carvalho & Souza</span>
+              <span className="text-xl font-serif font-bold transition-colors group-hover:text-gray-300">Vidraçaria Carvalho & Souza</span>
             </div>
             
             <p className="text-gray-500 text-xs uppercase tracking-[0.2em]">
