@@ -40,7 +40,7 @@ export default function App() {
       title: "Box de Banheiro com design moderno e sofisticado",
       subtitle: "Elegância e Conforto",
       desc: "Modelos personalizados com vidro temperado e ferragens de alta qualidade em diversas cores.",
-      img: "https://i.postimg.cc/QM6ctcRg/Chat-GPT-Image-3-de-mai-de-2026-12-40-20.png",
+      img: "https://i.postimg.cc/nV4Z8xNc/Whats-App-Image-2026-05-03-at-15-17-35.jpg",
       showBranding: false
     },
     {
@@ -88,7 +88,7 @@ export default function App() {
             <img 
               src="https://i.postimg.cc/GpFCQ2hW/Logo.jpg" 
               alt="Logo Carvalho & Souza" 
-              className="w-10 h-10 object-contain rounded-md"
+              className="w-10 h-10 object-contain rounded-full"
             />
             <span className="text-xl font-serif font-bold text-black">
               Vidraçaria Carvalho & Souza
@@ -191,7 +191,7 @@ export default function App() {
                   <div className="inline-flex items-center gap-3 px-4 py-2 bg-white/10 backdrop-blur-md border border-white/20 rounded-full mb-6 text-sm tracking-wide">
                     <img 
                       src="https://i.postimg.cc/GpFCQ2hW/Logo.jpg" 
-                      className="w-8 h-8 object-contain rounded-sm" 
+                      className="w-8 h-8 object-contain rounded-full" 
                       alt="" 
                     />
                     <span className="font-bold uppercase tracking-widest">{heroSlides[currentSlide].subtitle}</span>
@@ -321,7 +321,7 @@ export default function App() {
               <div className="flex items-center gap-3 opacity-60">
                 <img 
                   src="https://i.postimg.cc/GpFCQ2hW/Logo.jpg" 
-                  className="w-8 h-8 object-contain rounded-sm" 
+                  className="w-8 h-8 object-contain rounded-full" 
                   alt="" 
                 />
                 <p className="text-xs uppercase tracking-widest font-bold">Equipe Vidraçaria Carvalho & Souza</p>
@@ -372,7 +372,7 @@ export default function App() {
               {
                 title: "Espelhos sob medida",
                 desc: "Acabamento impecável com lapidação ou bisotê para ampliar e iluminar seu ambiente.",
-                img: "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&q=80&w=600"
+                img: "https://i.postimg.cc/0y1XCCMy/Whats-App-Image-2026-05-03-at-11-41-08-(1).jpg"
               }
             ].map((service, i) => (
               <motion.div 
@@ -658,7 +658,7 @@ export default function App() {
               <img 
                 src="https://i.postimg.cc/GpFCQ2hW/Logo.jpg" 
                 alt="Logo Carvalho & Souza" 
-                className="w-12 h-12 object-contain rounded-md"
+                className="w-12 h-12 object-contain rounded-full"
               />
               <span className="text-xl font-serif font-bold transition-colors group-hover:text-gray-300">Vidraçaria Carvalho & Souza</span>
             </div>
