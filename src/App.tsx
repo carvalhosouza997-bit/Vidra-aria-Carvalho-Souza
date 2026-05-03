@@ -180,12 +180,12 @@ export default function App() {
               <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent"></div>
             </div>
 
-            <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 w-full h-full flex items-center mt-10">
+            <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 w-full h-full flex flex-col items-center justify-start pt-10 md:pt-14 text-center">
               <motion.div 
-                initial={{ opacity: 0, x: -50 }}
-                animate={{ opacity: 1, x: 0 }}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
-                className="max-w-3xl text-white"
+                className="max-w-3xl text-white flex flex-col items-center"
               >
                 {heroSlides[currentSlide].showBranding ? (
                   <div className="inline-flex items-center gap-3 px-4 py-2 bg-white/10 backdrop-blur-md border border-white/20 rounded-full mb-6 text-sm tracking-wide">
@@ -203,11 +203,11 @@ export default function App() {
                   </div>
                 )}
                 
-                <h1 className="text-5xl md:text-7xl font-serif font-bold leading-[1.1] mb-6">
+                <h1 className="text-3xl md:text-5xl font-serif font-bold leading-[1.1] mb-6">
                   {heroSlides[currentSlide].title}
                 </h1>
                 
-                <p className="text-xl text-gray-300 font-light mb-10 max-w-lg leading-relaxed">
+                <p className="text-base text-gray-300 font-light mb-10 max-w-lg leading-relaxed mx-auto">
                   {heroSlides[currentSlide].desc}
                 </p>
                 
