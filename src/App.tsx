@@ -26,6 +26,38 @@ const WHATSAPP_LINK = "https://wa.me/5547998880915?text=Ol%C3%A1%2C%20tudo%20bem
 export default function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  const heroSlides = [
+    {
+      title: "Especialistas em fechamento de sacadas e projetos em vidro sob medida",
+      subtitle: "Vidraçaria Carvalho & Souza",
+      desc: "Mais de 25 anos trazendo qualidade, segurança e compromisso em vidraçaria para você e seu imóvel.",
+      img: "https://i.postimg.cc/90bTqTk1/Chat-GPT-Image-3-de-mai-de-2026-12-26-38.png",
+      showBranding: true
+    },
+    {
+      title: "Box de Banheiro com design moderno e sofisticado",
+      subtitle: "Elegância e Conforto",
+      desc: "Modelos personalizados com vidro temperado e ferragens de alta qualidade em diversas cores.",
+      img: "https://i.postimg.cc/QM6ctcRg/Chat-GPT-Image-3-de-mai-de-2026-12-40-20.png",
+      showBranding: false
+    },
+    {
+      title: "Soluções completas para seu ambiente comercial ou residencial",
+      subtitle: "Vidraçaria Carvalho & Souza",
+      desc: "Atendimento profissional em Balneário Camboriú e região com garantia e suporte técnico.",
+      img: "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&q=80&w=1200",
+      showBranding: true
+    }
+  ];
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % heroSlides.length);
+    }, 6000);
+    return () => clearInterval(timer);
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50);
@@ -47,18 +79,18 @@ export default function App() {
       {/* Navigation */}
       <nav 
         id="navbar"
-        className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-          scrolled ? 'bg-white/90 backdrop-blur-md py-4 shadow-sm' : 'bg-transparent py-6'
+        className={`relative w-full z-50 transition-all duration-300 ${
+          scrolled ? 'bg-white py-4 shadow-sm' : 'bg-white py-6 border-b border-gray-50'
         }`}
       >
         <div className="max-w-7xl mx-auto px-6 md:px-12 flex justify-between items-center text-sm font-medium tracking-tight">
           <div className="flex items-center gap-2">
             <img 
-              src="https://i.postimg.cc/pL43XG0G/logo-vidracaria.png" 
+              src="https://i.postimg.cc/GpFCQ2hW/Logo.jpg" 
               alt="Logo Carvalho & Souza" 
-              className={`w-10 h-10 object-contain transition-all ${scrolled ? 'brightness-0' : 'brightness-0 invert'}`}
+              className="w-10 h-10 object-contain rounded-md"
             />
-            <span className={`text-xl font-serif font-bold ${scrolled ? 'text-black' : 'text-black md:text-white'}`}>
+            <span className="text-xl font-serif font-bold text-black">
               Vidraçaria Carvalho & Souza
             </span>
           </div>
@@ -68,7 +100,7 @@ export default function App() {
               <a 
                 key={link.name} 
                 href={link.href} 
-                className={`transition-colors hover:text-gray-500 underline-offset-4 hover:underline ${scrolled ? 'text-black' : 'text-white'}`}
+                className="transition-colors hover:text-gray-500 underline-offset-4 hover:underline text-black"
               >
                 {link.name}
               </a>
@@ -89,7 +121,7 @@ export default function App() {
             className="md:hidden text-black focus:outline-none"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
-            {isMenuOpen ? <X /> : <Menu className={!scrolled ? 'text-black md:text-white' : 'text-black'} />}
+            {isMenuOpen ? <X /> : <Menu className="text-black" />}
           </button>
         </div>
 
@@ -127,56 +159,89 @@ export default function App() {
       </nav>
 
       {/* Hero Section */}
-      <header className="relative h-[95vh] w-full flex items-center overflow-hidden">
-        <div className="absolute inset-0 z-0 text-center flex items-center justify-center bg-gray-900">
-          <div className="absolute inset-0 z-0">
-            <img 
-              src="https://i.postimg.cc/90bTqTk1/Chat-GPT-Image-3-de-mai-de-2026-12-26-38.png" 
-              alt="Sacada moderna com fechamento em vidro" 
-              className="w-full h-full object-cover scale-105"
-            />
-          </div>
-          <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent"></div>
-        </div>
-
-        <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 w-full mt-20">
-          <motion.div 
-            initial={{ opacity: 0, x: -50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-            className="max-w-2xl text-white"
+      <header className="relative h-[85vh] w-full flex items-center overflow-hidden">
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={currentSlide}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 1 }}
+            className="absolute inset-0 z-0"
           >
-            <div className="inline-flex items-center gap-2 px-3 py-1 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full mb-6 text-sm tracking-wide">
-              <div className="w-2 h-2 rounded-full bg-green-400 animate-pulse"></div>
-              <span>Atendimento em Balneário Camboriú e região</span>
-            </div>
-            
-            <h1 className="text-5xl md:text-7xl font-serif font-bold leading-[1.1] mb-6">
-              Especialistas em fechamento de sacadas e projetos em vidro sob medida
-            </h1>
-            
-            <p className="text-xl text-gray-300 font-light mb-10 max-w-lg leading-relaxed">
-              Mais de <span className="text-white font-medium">25 anos</span> trazendo qualidade, segurança e compromisso em vidraçaria para você e seu imóvel.
-            </p>
-            
-            <div className="flex flex-col sm:flex-row items-center gap-4">
-              <motion.a 
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-                href={WHATSAPP_LINK}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-full sm:w-auto px-8 py-5 bg-black text-white rounded-full flex items-center justify-center gap-3 text-lg font-semibold hover:bg-gray-900 transition-colors shadow-2xl shadow-black/50 group"
-              >
-                <MessageCircle size={24} className="group-hover:rotate-12 transition-transform" />
-                Orçamento no WhatsApp
-              </motion.a>
-              
-              <div className="text-sm font-medium tracking-wider text-gray-400">
-                Orçamento gratuito & sem compromisso
+            <div className="absolute inset-0 z-0 text-center flex items-center justify-center bg-gray-900">
+              <div className="absolute inset-0 z-0">
+                <img 
+                  src={heroSlides[currentSlide].img} 
+                  alt={heroSlides[currentSlide].title} 
+                  className="w-full h-full object-cover scale-105"
+                />
               </div>
+              <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent"></div>
+            </div>
+
+            <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 w-full h-full flex items-center mt-10">
+              <motion.div 
+                initial={{ opacity: 0, x: -50 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
+                className="max-w-3xl text-white"
+              >
+                {heroSlides[currentSlide].showBranding ? (
+                  <div className="inline-flex items-center gap-3 px-4 py-2 bg-white/10 backdrop-blur-md border border-white/20 rounded-full mb-6 text-sm tracking-wide">
+                    <img 
+                      src="https://i.postimg.cc/GpFCQ2hW/Logo.jpg" 
+                      className="w-8 h-8 object-contain rounded-sm" 
+                      alt="" 
+                    />
+                    <span className="font-bold uppercase tracking-widest">{heroSlides[currentSlide].subtitle}</span>
+                  </div>
+                ) : (
+                  <div className="inline-flex items-center gap-2 px-3 py-1 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full mb-6 text-sm tracking-wide">
+                    <div className="w-2 h-2 rounded-full bg-green-400 animate-pulse"></div>
+                    <span>{heroSlides[currentSlide].subtitle}</span>
+                  </div>
+                )}
+                
+                <h1 className="text-5xl md:text-7xl font-serif font-bold leading-[1.1] mb-6">
+                  {heroSlides[currentSlide].title}
+                </h1>
+                
+                <p className="text-xl text-gray-300 font-light mb-10 max-w-lg leading-relaxed">
+                  {heroSlides[currentSlide].desc}
+                </p>
+                
+                <div className="flex flex-col sm:flex-row items-center gap-4">
+                  <motion.a 
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                    href={WHATSAPP_LINK}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full sm:w-auto px-8 py-5 bg-black text-white rounded-full flex items-center justify-center gap-3 text-lg font-semibold hover:bg-gray-900 transition-colors shadow-2xl shadow-black/50 group"
+                  >
+                    <MessageCircle size={24} className="group-hover:rotate-12 transition-transform" />
+                    Orçamento no WhatsApp
+                  </motion.a>
+                  
+                  <div className="text-sm font-medium tracking-wider text-gray-400">
+                    Atendimento em Balneário Camboriú e região
+                  </div>
+                </div>
+              </motion.div>
             </div>
           </motion.div>
+        </AnimatePresence>
+
+        <div className="absolute bottom-10 right-12 z-20 flex gap-4">
+          {heroSlides.map((_, i) => (
+            <button
+              key={i}
+              onClick={() => setCurrentSlide(i)}
+              className={`h-1.5 transition-all rounded-full ${currentSlide === i ? 'w-12 bg-white' : 'w-4 bg-white/30'}`}
+              aria-label={`Ir para slide ${i + 1}`}
+            />
+          ))}
         </div>
 
         <motion.div 
@@ -252,8 +317,15 @@ export default function App() {
               />
             </div>
             <div className="absolute -bottom-8 -left-8 bg-black text-white p-10 rounded-2xl shadow-2xl hidden lg:block">
-              <p className="text-2xl font-serif italic mb-2">"Garantimos a melhor experiência do início ao fim."</p>
-              <p className="text-xs uppercase tracking-widest opacity-60">Equipe Vidraçaria Carvalho & Souza</p>
+              <p className="text-2xl font-serif italic mb-4">"Garantimos a melhor experiência do início ao fim."</p>
+              <div className="flex items-center gap-3 opacity-60">
+                <img 
+                  src="https://i.postimg.cc/GpFCQ2hW/Logo.jpg" 
+                  className="w-8 h-8 object-contain rounded-sm" 
+                  alt="" 
+                />
+                <p className="text-xs uppercase tracking-widest font-bold">Equipe Vidraçaria Carvalho & Souza</p>
+              </div>
             </div>
           </motion.div>
         </div>
@@ -410,7 +482,7 @@ export default function App() {
           </div>
           
           <div className="bg-gray-50 p-12 rounded-3xl">
-            <h2 className="text-4xl font-serif font-bold mb-6 italic">Por que escolher a Carvalho & Souza?</h2>
+            <h2 className="text-4xl font-serif font-bold mb-6 italic">Por que escolher a Vidraçaria Carvalho & Souza?</h2>
             <p className="text-gray-600 mb-10 text-lg leading-relaxed">
               Nossa abordagem combina o artesanato tradicional da vidraçaria com as tecnologias mais modernas de fechamento e vedação. Cada projeto é tratado como único.
             </p>
@@ -582,11 +654,11 @@ export default function App() {
           </div>
 
           <div className="flex flex-col md:flex-row justify-between items-center pt-12 border-t border-white/10 gap-6">
-            <div className="flex items-center gap-3">
+            <div className="flex items-center gap-3 group">
               <img 
-                src="https://i.postimg.cc/pL43XG0G/logo-vidracaria.png" 
+                src="https://i.postimg.cc/GpFCQ2hW/Logo.jpg" 
                 alt="Logo Carvalho & Souza" 
-                className="w-10 h-10 object-contain brightness-0 invert"
+                className="w-12 h-12 object-contain rounded-md"
               />
               <span className="text-xl font-serif font-bold transition-colors group-hover:text-gray-300">Vidraçaria Carvalho & Souza</span>
             </div>
