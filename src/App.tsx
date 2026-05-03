@@ -63,7 +63,7 @@ export default function App() {
               }}
             />
             <span className={`text-xl font-serif font-bold ${scrolled ? 'text-black' : 'text-black md:text-white'}`}>
-              Carvalho & Souza
+              Vidraçaria Carvalho & Souza
             </span>
           </div>
 
@@ -257,7 +257,7 @@ export default function App() {
             </div>
             <div className="absolute -bottom-8 -left-8 bg-black text-white p-10 rounded-2xl shadow-2xl hidden lg:block">
               <p className="text-2xl font-serif italic mb-2">"Garantimos a melhor experiência do início ao fim."</p>
-              <p className="text-xs uppercase tracking-widest opacity-60">Equipe Carvalho & Souza</p>
+              <p className="text-xs uppercase tracking-widest opacity-60">Equipe Vidraçaria Carvalho & Souza</p>
             </div>
           </motion.div>
         </div>
@@ -592,7 +592,7 @@ export default function App() {
                 alt="Logo Carvalho & Souza" 
                 className="w-8 h-8 object-contain filter invert"
               />
-              <span className="text-sm font-serif font-bold">Carvalho & Souza</span>
+              <span className="text-sm font-serif font-bold">Vidraçaria Carvalho & Souza</span>
             </div>
             
             <p className="text-gray-500 text-xs uppercase tracking-[0.2em]">
