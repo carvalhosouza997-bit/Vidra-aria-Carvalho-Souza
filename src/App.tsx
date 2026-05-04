@@ -34,21 +34,24 @@ export default function App() {
       subtitle: "Vidraçaria Carvalho & Souza",
       desc: "Mais de 25 anos trazendo qualidade, segurança e compromisso em vidraçaria para você e seu imóvel.",
       img: "https://i.postimg.cc/90bTqTk1/Chat-GPT-Image-3-de-mai-de-2026-12-26-38.png",
-      showBranding: true
+      showBranding: true,
+      fit: "object-cover"
     },
     {
       title: "Box de Banheiro com design moderno e sofisticado",
       subtitle: "Elegância e Conforto",
       desc: "Modelos personalizados com vidro temperado e ferragens de alta qualidade em diversas cores.",
-      img: "https://i.postimg.cc/nV4Z8xNc/Whats-App-Image-2026-05-03-at-15-17-35.jpg",
-      showBranding: false
+      img: "https://i.postimg.cc/C1HsC1PJ/Foto-de-box-de-banheiro.png",
+      showBranding: false,
+      fit: "object-contain"
     },
     {
       title: "Soluções completas para seu ambiente comercial ou residencial",
       subtitle: "Vidraçaria Carvalho & Souza",
       desc: "Atendimento profissional em Balneário Camboriú e região com garantia e suporte técnico.",
       img: "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&q=80&w=1200",
-      showBranding: true
+      showBranding: true,
+      fit: "object-cover"
     }
   ];
 
@@ -174,7 +177,11 @@ export default function App() {
                 <img 
                   src={heroSlides[currentSlide].img} 
                   alt={heroSlides[currentSlide].title} 
-                  className="w-full h-full object-cover scale-105"
+                  className={`w-full h-full transition-all duration-1000 ${
+                    heroSlides[currentSlide].fit === 'object-contain' 
+                      ? 'object-contain scale-100' 
+                      : 'object-cover scale-105'
+                  }`}
                 />
               </div>
               <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent"></div>
@@ -311,7 +318,7 @@ export default function App() {
           >
             <div className="aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl">
               <img 
-                src="https://i.postimg.cc/0y1XCCMy/Whats-App-Image-2026-05-03-at-11-41-08-(1).jpg" 
+                src="https://i.postimg.cc/mk3Mf5fS/Foto-de-espelho-sob-medida.png" 
                 alt="Instalação real Carvalho & Souza" 
                 className="w-full h-full object-cover"
               />
@@ -347,32 +354,39 @@ export default function App() {
                 highlight: "Sistema Stanley e Trona",
                 desc: "Tecnologia de ponta para total vedação e acústica. O destaque principal da nossa empresa.",
                 img: "https://i.postimg.cc/90bTqTk1/Chat-GPT-Image-3-de-mai-de-2026-12-26-38.png",
-                isMain: true
+                isMain: true,
+                fit: "object-cover"
               },
               {
                 title: "Box de Banheiro",
                 desc: "Modelos modernos com vidro temperado e ferragens em diversas cores para seu conforto.",
-                img: "https://i.postimg.cc/QM6ctcRg/Chat-GPT-Image-3-de-mai-de-2026-12-40-20.png"
+                img: "https://i.postimg.cc/sgxBwXxr/Foto-box-horizontal.png",
+                fit: "object-cover",
+                position: "object-center"
               },
               {
                 title: "Manutenção de Sacadas",
                 desc: "Revisão geral, troca de roldanas e vedações para garantir o funcionamento perfeito.",
-                img: "https://images.unsplash.com/photo-1516939884455-1445c8652f83?auto=format&fit=crop&q=80&w=600"
+                img: "https://i.postimg.cc/xT5BfptC/Foto-manutencao-de-sacada.png",
+                fit: "object-cover"
               },
               {
                 title: "Guarda-corpo em Vidro",
                 desc: "Segurança e elegância para escadas, mezaninos e terraços com design minimalista.",
-                img: "https://images.unsplash.com/photo-1620626011761-9963d7521476?auto=format&fit=crop&q=80&w=600"
+                img: "https://i.postimg.cc/X7Ky1mnJ/Foto-de-guarda-corpo.png",
+                fit: "object-cover"
               },
               {
                 title: "Esquadrias de Alumínio",
                 desc: "Portas e janelas sob medida com alta durabilidade e isolamento termoacústico.",
-                img: "https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?auto=format&fit=crop&q=80&w=600"
+                img: "https://i.postimg.cc/9QTgkWrW/Foto-de-esquadria-de-aluminio.png",
+                fit: "object-cover"
               },
               {
                 title: "Espelhos sob medida",
                 desc: "Acabamento impecável com lapidação ou bisotê para ampliar e iluminar seu ambiente.",
-                img: "https://i.postimg.cc/0y1XCCMy/Whats-App-Image-2026-05-03-at-11-41-08-(1).jpg"
+                img: "https://i.postimg.cc/mk3Mf5fS/Foto-de-espelho-sob-medida.png",
+                fit: "object-cover"
               }
             ].map((service, i) => (
               <motion.div 
@@ -383,11 +397,11 @@ export default function App() {
                 transition={{ delay: i * 0.1 }}
                 className={`group relative overflow-hidden rounded-2xl ${service.isMain ? 'ring-2 ring-black ring-offset-4' : 'border border-gray-100'}`}
               >
-                <div className="aspect-square overflow-hidden">
+                <div className="aspect-square overflow-hidden bg-gray-100">
                   <img 
                     src={service.img} 
                     alt={service.title}
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                    className={`w-full h-full transition-transform duration-700 group-hover:scale-110 ${service.fit || 'object-cover'} ${service.position || 'object-center'}`}
                   />
                 </div>
                 <div className="p-8 bg-white">
@@ -429,14 +443,14 @@ export default function App() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
             {[
-              "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d",
-              "https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b",
-              "https://images.unsplash.com/photo-1600607687644-c7171b42498f",
-              "https://images.unsplash.com/photo-1600566753086-00f18fb6f3ea",
-              "https://images.unsplash.com/photo-1600607688969-a5bfcd646154",
-              "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0",
-              "https://images.unsplash.com/photo-1600121848594-d8644e57abab",
-              "https://images.unsplash.com/photo-1600585154542-630846dc573b"
+              "https://i.postimg.cc/5yH48HpP/Foto-sacada-1.png",
+              "https://i.postimg.cc/4d07CR0g/Foto-box-2.png",
+              "https://i.postimg.cc/YC8QXZtp/Foto-janela-3.png",
+              "https://i.postimg.cc/DwY84T2T/Foto-espelho-4.png",
+              "https://i.postimg.cc/nLBpVbr1/Foto-guarda-corpo-5.png",
+              "https://i.postimg.cc/C1rvWd0r/Foto-esquadria-6.jpg",
+              "https://i.postimg.cc/XqM2VmZk/Foto-de-porta-de-vidro-7.jpg",
+              "https://i.postimg.cc/zBTCkBBQ/Foto-de-sacada-Stanley.jpg"
             ].map((url, i) => (
               <motion.div 
                 key={i}
@@ -446,7 +460,7 @@ export default function App() {
                 transition={{ delay: i * 0.05 }}
                 className="aspect-square relative group overflow-hidden rounded-lg"
               >
-                <img src={`${url}?auto=format&fit=crop&q=80&w=400`} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" alt="Projeto Vidraçaria" />
+                <img src={url} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" alt="Projeto Vidraçaria" />
                 <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
                   <Maximize className="text-white" />
                 </div>
@@ -561,7 +575,7 @@ export default function App() {
                 Levamos nossa experiência até você. Atendemos com prontidão nas principais cidades do litoral catarinense.
               </p>
               <div className="grid grid-cols-2 gap-6">
-                {["Balneário Camboriú", "Camboriú", "Itapema", "Porto Bello", "Itajaí", "Penha", "Barra Velha", "Balneário Piçarras"].map(city => (
+                {["Balneário Camboriú", "Camboriú", "Itapema", "Porto Bello", "Itajaí", "Navegantes", "Penha", "Barra Velha", "Balneário Piçarras"].map(city => (
                   <div key={city} className="flex items-center gap-2">
                     <div className="w-1.5 h-1.5 rounded-full bg-black"></div>
                     <span className="font-bold uppercase text-xs tracking-widest">{city}</span>
@@ -569,11 +583,12 @@ export default function App() {
                 ))}
               </div>
             </div>
-            <div className="aspect-square bg-gray-100 rounded-2xl flex items-center justify-center p-8 text-center text-gray-400 border border-dashed border-gray-300">
-              <div className="flex flex-col items-center gap-4">
-                <Maximize size={48} className="stroke-1" />
-                <p className="font-medium">Estamos a uma mensagem de distância.</p>
-              </div>
+            <div className="aspect-square rounded-2xl overflow-hidden shadow-xl border border-gray-100 bg-gray-50 flex items-center justify-center">
+              <img 
+                src="https://i.postimg.cc/g03jSB9D/mapa-de-atendimento.png" 
+                alt="Mapa de Atendimento Carvalho & Souza" 
+                className="w-full h-full object-contain"
+              />
             </div>
           </div>
         </div>
