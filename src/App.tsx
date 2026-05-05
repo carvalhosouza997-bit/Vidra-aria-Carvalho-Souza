@@ -21,7 +21,7 @@ import {
 } from 'lucide-react';
 import { useState, useEffect } from 'react';
 
-const WHATSAPP_LINK = "https://wa.me/5547998880915?text=Ol%C3%A1%2C%20tudo%20bem%3F%20%F0%9F%98%83%20Sou%20a%20Rosiane.%20Para%20eu%20te%20atender%20melhor%2C%20voc%C3%AA%20est%C3%A1%20falando%20de%20qual%20cidade%3F";
+const WHATSAPP_LINK = "https://wa.me/5547988809159?text=Ol%C3%A1%2C%20tudo%20bem%3F%20%F0%9F%98%83%20Sou%20a%20Rosiane.%20Para%20eu%20te%20atender%20melhor%2C%20voc%C3%AA%20est%C3%A1%20falando%20de%20qual%20cidade%3F";
 
 export default function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -608,7 +608,7 @@ export default function App() {
                   </div>
                   <div>
                     <p className="text-gray-500 uppercase text-[10px] tracking-[0.2em] mb-1">Telefone / WhatsApp</p>
-                    <a href={WHATSAPP_LINK} className="text-2xl font-bold hover:text-gray-300 transition-colors">(47) 99888-09159</a>
+                    <a href={WHATSAPP_LINK} className="text-2xl font-bold hover:text-gray-300 transition-colors">(47) 98880-9159</a>
                   </div>
                 </div>
 
