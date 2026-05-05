@@ -43,7 +43,7 @@ export default function App() {
       desc: "Modelos personalizados com vidro temperado e ferragens de alta qualidade em diversas cores.",
       img: "https://i.postimg.cc/C1HsC1PJ/Foto-de-box-de-banheiro.png",
       showBranding: false,
-      fit: "object-contain"
+      fit: "object-cover"
     },
     {
       title: "Soluções completas para seu ambiente comercial ou residencial",
@@ -583,11 +583,11 @@ export default function App() {
                 ))}
               </div>
             </div>
-            <div className="aspect-square rounded-2xl overflow-hidden shadow-xl border border-gray-100 bg-gray-50 flex items-center justify-center">
+            <div className="h-full min-h-[400px] rounded-2xl overflow-hidden shadow-xl border border-gray-100 bg-gray-50 flex items-center justify-center">
               <img 
                 src="https://i.postimg.cc/g03jSB9D/mapa-de-atendimento.png" 
                 alt="Mapa de Atendimento Carvalho & Souza" 
-                className="w-full h-full object-contain"
+                className="w-full h-full object-cover"
               />
             </div>
           </div>
