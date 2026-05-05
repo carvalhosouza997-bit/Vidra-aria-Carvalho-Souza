@@ -21,7 +21,7 @@ import {
 } from 'lucide-react';
 import { useState, useEffect } from 'react';
 
-const WHATSAPP_LINK = "https://wa.me/5547988809159?text=Ol%C3%A1%2C%20tudo%20bem%3F%20%F0%9F%98%83%20Sou%20a%20Rosiane.%20Para%20eu%20te%20atender%20melhor%2C%20voc%C3%AA%20est%C3%A1%20falando%20de%20qual%20cidade%3F";
+const WHATSAPP_LINK = "https://wa.me/5547988809159?text=Ol%C3%A1%20vim%20pelo%20site%20e%20quero%20um%20or%C3%A7amento";
 
 export default function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -114,7 +114,7 @@ export default function App() {
             href={WHATSAPP_LINK} 
             target="_blank" 
             rel="noopener noreferrer"
-            className="hidden lg:flex items-center gap-2 bg-black text-white px-5 py-2.5 rounded-full hover:bg-gray-800 transition-all active:scale-95"
+            className="hidden lg:flex items-center gap-2 bg-[#25D366] text-white px-5 py-2.5 rounded-full hover:shadow-[0_4px_12px_rgba(37,211,102,0.3)] transition-all active:scale-95 font-bold"
           >
             <MessageCircle size={18} />
             <span>Orçamento</span>
@@ -151,7 +151,7 @@ export default function App() {
                 href={WHATSAPP_LINK}
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="w-full bg-black text-white py-4 rounded-xl flex justify-center items-center gap-2"
+                className="w-full bg-[#25D366] text-white py-4 rounded-xl flex justify-center items-center gap-2 font-bold shadow-lg"
               >
                 <MessageCircle size={20} />
                 Solicitar Orçamento
@@ -225,7 +225,7 @@ export default function App() {
                     href={WHATSAPP_LINK}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-full sm:w-auto px-8 py-5 bg-black text-white rounded-full flex items-center justify-center gap-3 text-lg font-semibold hover:bg-gray-900 transition-colors shadow-2xl shadow-black/50 group"
+                    className="w-full sm:w-auto px-8 py-5 bg-[#25D366] text-white rounded-full flex items-center justify-center gap-3 text-lg font-bold hover:shadow-[0_0_30px_rgba(37,211,102,0.4)] transition-all group"
                   >
                     <MessageCircle size={24} className="group-hover:rotate-12 transition-transform" />
                     Orçamento no WhatsApp
@@ -417,9 +417,9 @@ export default function App() {
                     href={WHATSAPP_LINK}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 text-sm font-bold border-b border-black pb-1 hover:translate-x-1 transition-transform"
+                    className="inline-flex items-center gap-2 bg-[#25D366] text-white px-4 py-2 rounded-lg text-sm font-bold hover:shadow-[0_4px_12px_rgba(37,211,102,0.3)] transition-all hover:-translate-y-0.5"
                   >
-                    Saber mais <ArrowRight size={14} />
+                    Solicitar Orçamento <ArrowRight size={14} />
                   </a>
                 </div>
               </motion.div>
@@ -603,8 +603,8 @@ export default function App() {
               
               <div className="space-y-10">
                 <div className="flex items-center gap-6 group cursor-pointer">
-                  <div className="w-16 h-16 rounded-full border border-white/20 flex items-center justify-center group-hover:bg-white group-hover:text-black transition-all">
-                    <Phone size={24} />
+                  <div className="w-16 h-16 rounded-full bg-[#25D366] flex items-center justify-center transition-all group-hover:scale-110">
+                    <Phone size={24} className="text-white" />
                   </div>
                   <div>
                     <p className="text-gray-500 uppercase text-[10px] tracking-[0.2em] mb-1">Telefone / WhatsApp</p>
@@ -613,8 +613,8 @@ export default function App() {
                 </div>
 
                 <div className="flex items-center gap-6 group cursor-pointer">
-                  <div className="w-16 h-16 rounded-full border border-white/20 flex items-center justify-center group-hover:bg-white group-hover:text-black transition-all">
-                    <Instagram size={24} />
+                  <div className="w-16 h-16 rounded-full bg-gradient-to-tr from-[#f9ce34] via-[#ee2a7b] to-[#6228d7] flex items-center justify-center transition-all group-hover:scale-110">
+                    <Instagram size={24} className="text-white" />
                   </div>
                   <div>
                     <p className="text-gray-500 uppercase text-[10px] tracking-[0.2em] mb-1">Instagram</p>
@@ -623,8 +623,8 @@ export default function App() {
                 </div>
 
                 <div className="flex items-center gap-6 group cursor-pointer">
-                  <div className="w-16 h-16 rounded-full border border-white/20 flex items-center justify-center group-hover:bg-white group-hover:text-black transition-all">
-                    <Mail size={24} />
+                  <div className="w-16 h-16 rounded-full bg-[#EA4335] flex items-center justify-center transition-all group-hover:scale-110">
+                    <Mail size={24} className="text-white" />
                   </div>
                   <div>
                     <p className="text-gray-500 uppercase text-[10px] tracking-[0.2em] mb-1">E-mail</p>
