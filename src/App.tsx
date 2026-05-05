@@ -567,8 +567,8 @@ export default function App() {
 
       {/* Service Area */}
       <section id="atendimento" className="section-padding bg-white">
-        <div className="max-w-7xl mx-auto border border-black p-12 md:p-20 rounded-3xl overflow-hidden relative">
-          <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <div className="max-w-7xl mx-auto border border-black px-8 py-3 md:px-14 md:py-4 rounded-3xl overflow-hidden relative">
+          <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center">
             <div>
               <h2 className="text-4xl md:text-5xl font-serif font-bold mb-8">Atendimento Profissional em Toda a Região</h2>
               <p className="text-gray-600 text-lg mb-8 leading-relaxed">
@@ -583,7 +583,7 @@ export default function App() {
                 ))}
               </div>
             </div>
-            <div className="aspect-square bg-black rounded-2xl overflow-hidden shadow-2xl border border-gray-800 p-4 sm:p-12 flex items-center justify-center translate-y-2">
+            <div className="aspect-square bg-black rounded-2xl overflow-hidden shadow-2xl border border-gray-800 p-2 sm:p-4 flex items-center justify-center translate-y-2">
               <img 
                 src="https://i.postimg.cc/g03jSB9D/mapa-de-atendimento.png" 
                 alt="Mapa de Atendimento Carvalho & Souza" 
