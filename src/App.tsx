@@ -567,23 +567,23 @@ export default function App() {
 
       {/* Service Area */}
       <section id="atendimento" className="section-padding bg-white">
-        <div className="max-w-7xl mx-auto border border-black px-8 py-3 md:px-14 md:py-4 rounded-3xl overflow-hidden relative">
-          <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center">
-            <div>
-              <h2 className="text-4xl md:text-5xl font-serif font-bold mb-8">Atendimento Profissional em Toda a Região</h2>
-              <p className="text-gray-600 text-lg mb-8 leading-relaxed">
+        <div className="max-w-7xl mx-auto border border-black px-2 py-12 md:px-3 md:py-20 rounded-3xl overflow-hidden relative">
+          <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-10 items-center">
+            <div className="px-4 lg:px-12">
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold mb-8 leading-tight">Atendimento Profissional em Toda a Região</h2>
+              <p className="text-gray-600 text-xl md:text-2xl mb-12 leading-relaxed">
                 Levamos nossa experiência até você. Atendemos com prontidão nas principais cidades do litoral catarinense.
               </p>
-              <div className="grid grid-cols-2 gap-6">
+              <div className="grid grid-cols-2 gap-y-6 gap-x-4 md:gap-y-10 lg:gap-x-12">
                 {["Balneário Camboriú", "Camboriú", "Itapema", "Porto Bello", "Itajaí", "Navegantes", "Penha", "Barra Velha", "Balneário Piçarras"].map(city => (
-                  <div key={city} className="flex items-center gap-2">
-                    <div className="w-1.5 h-1.5 rounded-full bg-black"></div>
-                    <span className="font-bold uppercase text-xs tracking-widest">{city}</span>
+                  <div key={city} className="flex items-center gap-4">
+                    <div className="w-3 h-3 rounded-full bg-black shrink-0"></div>
+                    <span className="font-bold text-xl md:text-2xl lg:text-3xl tracking-tight leading-tight">{city}</span>
                   </div>
                 ))}
               </div>
             </div>
-            <div className="aspect-square bg-black rounded-2xl overflow-hidden shadow-2xl border border-gray-800 p-2 sm:p-4 flex items-center justify-center translate-y-2">
+            <div className="w-full aspect-square bg-black rounded-2xl overflow-hidden shadow-2xl border border-gray-800 flex items-center justify-center">
               <img 
                 src="https://i.postimg.cc/g03jSB9D/mapa-de-atendimento.png" 
                 alt="Mapa de Atendimento Carvalho & Souza" 
